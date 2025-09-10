@@ -1,12 +1,24 @@
-# React + Vite
+# Real-Time Mood Recognition App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time facial expression recognition app built with React and face-api.js.
+The app detects your mood using your webcam and displays it live on the screen. It can be used for customer feedback, guest satisfaction tracking, or interactive demos.
 
-Currently, two official plugins are available:
+# What the App Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Captures webcam feed in real-time.
+Uses AI (face-api.js) to detect faces and recognize expressions.
+Detects moods: Happy, Sad, Angry, Surprised, Neutral.
+Displays the current mood live as text.
+Updates continuously as your expression changes.
 
-## Expanding the ESLint configuration
+# Applications:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Hospitality: Monitor guest satisfaction in hotels or restaurants.
+Retail: Gauge reactions to products or marketing displays.
+Interactive Demos: Fun engagement tool for events or online platforms.
+
+# Tech Stack
+
+Frontend: React + Vite
+AI/ML: face-api.js (runs in the browser via TensorFlow.js)
+Optional Backend: Node.js or MongoDB to log moods for analytics
