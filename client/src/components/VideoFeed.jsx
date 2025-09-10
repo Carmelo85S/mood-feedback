@@ -4,9 +4,7 @@ const VideoFeed = ({ videoRef }) => (
     autoPlay
     muted
     playsInline
-    width="640"
-    height="480"
-    style={{ border: "2px solid #ccc", borderRadius: "8px" }}
+    className="w-80 h-60 border-2 border-gray-300 rounded-lg"
   />
 );
 
