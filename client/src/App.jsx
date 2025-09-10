@@ -10,6 +10,19 @@ const App = () => {
         videoRef.current.srcObject = stream;
       })
       .catch(console.error);
+
+    // Load face-api.js models
+    const loadModels = async () => {
+      try {
+        await faceapi.nets.tinyFaceDetector.loadFromUri("/models");
+        await faceapi.nets.faceExpressionNet.loadFromUri("/models");
+        console.log("Models loaded");
+      } catch (err) {
+        console.error("Error loading models:", err);
+      }
+    };
+
+    loadModels();
   }, []);
 
   return (
