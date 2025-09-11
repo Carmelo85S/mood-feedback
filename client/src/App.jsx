@@ -23,14 +23,15 @@ const App = () => {
   }, []);
 
   const { mood, expressions } = useMoodDetection(videoRef);
+
   return (
-  <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+  <div className="min-h-screen bg-stone-950 text-white flex flex-col items-center p-6">
     <Header />
 
     <section className="w-full max-w-6xl bg-gray-800 rounded-xl shadow-lg flex flex-col md:flex-row overflow-hidden mt-6">
       
       {/* Video Feed */}
-      <div className="flex-1 p-4 flex justify-center items-center bg-gray-700">
+      <div className="flex-1 p-4 flex justify-center items-center bg-stone-900">
         <VideoFeed videoRef={videoRef} />
       </div>
 
