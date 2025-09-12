@@ -9,7 +9,7 @@ const expressionStyles = {
 };
 
 const ExpressionsList = ({ expressions }) => (
-  <div className="mt-4 space-y-2">
+  <div className="mt-2 md:mt-4 space-y-2">
     {expressions && Object.keys(expressions).length > 0 &&
       Object.entries(expressions).map(([exp, value]) => {
         const percentage = (value * 100).toFixed(1);

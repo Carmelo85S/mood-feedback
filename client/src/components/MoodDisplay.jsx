@@ -7,9 +7,7 @@ const MoodDisplay = ({ mood }) => {
 
   useEffect(() => {
     if (mood !== savedMood) {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
+      if (timerRef.current) clearTimeout(timerRef.current);
 
       timerRef.current = setTimeout(() => {
         setSavedMood(mood);
@@ -24,14 +22,14 @@ const MoodDisplay = ({ mood }) => {
   }, [mood, savedMood]);
 
   return (
-    <div className="bg-stone-800 p-6 text-center flex flex-col items-center gap-2">
-      <h2 className="text-xl md:text-2xl font-bold text-white">Current Mood</h2>
+    <div className="bg-stone-800 p-4 md:p-6 rounded-xl shadow-md text-center flex flex-col items-center gap-2">
+      <h2 className="text-lg md:text-2xl font-bold text-white">Current Mood</h2>
 
-      <div className="text-3xl md:text-4xl font-extrabold text-green-400 transition-all duration-300">
+      <div className="text-2xl md:text-4xl font-extrabold text-green-400 transition-all duration-300">
         {savedMood || "…"}
       </div>
 
-      <div className="text-sm text-gray-400 mt-1">
+      <div className="text-sm md:text-base text-gray-400 mt-1">
         Confirmed {counter} {counter === 1 ? "time" : "times"}
       </div>
     </div>
