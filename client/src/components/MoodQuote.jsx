@@ -12,9 +12,9 @@ const MoodQuote = ({ mood }) => {
   if (!mood || !moodQuotes[mood]) return null;
   const { text, author } = moodQuotes[mood];
   return (
-    <div className="mt-4 p-4 bg-black/50 border border-purple-500 rounded-lg shadow-neon max-w-md text-center">
-      <p className="text-pink-300 italic">"{text}"</p>
-      <p className="text-pink-400 text-sm mt-2">- {author}</p>
+    <div className="mt-2 sm:mt-4 p-2 sm:p-4 bg-black/50 border border-purple-500 rounded-lg shadow-neon max-w-xs sm:max-w-md text-center mx-auto">
+      <p className="text-pink-300 italic text-sm sm:text-base">"{text}"</p>
+      <p className="text-pink-400 text-xs sm:text-sm mt-2">- {author}</p>
     </div>
   );
 };

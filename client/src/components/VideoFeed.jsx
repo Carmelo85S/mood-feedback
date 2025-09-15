@@ -10,14 +10,12 @@ const VideoFeed = ({ videoRef }) => {
     if (!videoEl) return;
 
     const handleLoaded = () => {
-      if (canvasRef.current) return; // evita di ricrearlo
-
+      if (canvasRef.current) return;
       const canvas = faceapi.createCanvasFromMedia(videoEl);
       canvasRef.current = canvas;
       canvas.classList.add("absolute", "top-0", "left-0");
       videoEl.parentNode.style.position = "relative";
       videoEl.parentNode.appendChild(canvas);
-
       canvas.width = videoEl.videoWidth;
       canvas.height = videoEl.videoHeight;
     };
@@ -38,9 +36,9 @@ const VideoFeed = ({ videoRef }) => {
   }, [videoRef]);
 
   return (
-    <section className="relative p-4 flex flex-col bg-black/50 border border-purple-500 rounded-2xl shadow-glow">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-pink-300">Video Feed</h2>
+    <section className="relative p-2 sm:p-4 flex flex-col bg-black/50 border border-purple-500 rounded-2xl shadow-glow w-full max-w-xs sm:max-w-full">
+      <div className="flex justify-between items-center mb-2 sm:mb-4">
+        <h2 className="text-lg sm:text-xl font-bold text-pink-300">Video Feed</h2>
         <VideoButtons videoRef={videoRef} />
       </div>
 
@@ -50,7 +48,7 @@ const VideoFeed = ({ videoRef }) => {
         autoPlay
         muted
         playsInline
-        className="w-80 md:w-96 h-60 md:h-72 border-4 border-pink-500 rounded-xl object-cover shadow-neon"
+        className="w-full h-44 sm:w-80 sm:h-60 md:w-96 md:h-72 border-2 sm:border-4 border-pink-500 rounded-xl object-cover shadow-neon"
       />
     </section>
   );
