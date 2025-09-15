@@ -1,37 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+
+const moodEmoji = {
+  happy: "😄",
+  sad: "😢",
+  angry: "😠",
+  surprised: "😲",
+  neutral: "😐",
+  fearful: "😨",
+  disgusted: "🤢",
+};
 
 const MoodDisplay = ({ mood }) => {
-  const [savedMood, setSavedMood] = useState("");
-  const [counter, setCounter] = useState(0);
-  const timerRef = useRef(null);
-
-  useEffect(() => {
-    if (mood !== savedMood) {
-      if (timerRef.current) clearTimeout(timerRef.current);
-
-      timerRef.current = setTimeout(() => {
-        setSavedMood(mood);
-        setCounter(prev => prev + 1);
-        timerRef.current = null;
-      }, 2000);
-    }
-
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [mood, savedMood]);
-
+  const emoji = moodEmoji[mood] || "…";
   return (
-    <div className="bg-stone-800 p-4 md:p-6 rounded-xl shadow-md text-center flex flex-col items-center gap-2">
-      <h2 className="text-lg md:text-2xl font-bold text-white">Current Mood</h2>
-
-      <div className="text-2xl md:text-4xl font-extrabold text-green-400 transition-all duration-300">
-        {savedMood || "…"}
-      </div>
-
-      <div className="text-sm md:text-base text-gray-400 mt-1">
-        Confirmed {counter} {counter === 1 ? "time" : "times"}
-      </div>
+    <div className="bg-black/40 p-5 rounded-2xl shadow-neon text-center flex flex-col items-center gap-2 border border-pink-500 animate-pulse">
+      <h2 className="text-2xl md:text-3xl font-bold text-pink-400 glow">Current Mood</h2>
+      <div className="text-3xl md:text-5xl font-extrabold text-green-400 animate-bounce">{emoji} {mood || "…"}</div>
     </div>
   );
 };

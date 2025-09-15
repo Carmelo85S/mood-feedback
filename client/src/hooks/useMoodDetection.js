@@ -6,7 +6,7 @@ export const useMoodDetection = (videoRef, saveDelay = 2000) => {
   const [expressions, setExpressions] = useState({});
 
   useEffect(() => {
-    const options = new faceapi.TinyFaceDetectorOptions({ inputSize: 416, scoreThreshold: 0.5 });
+    const options = new faceapi.TinyFaceDetectorOptions({ inputSize: 416, scoreThreshold: 0.9 });
 
     const detectMood = async () => {
       if (videoRef.current && !videoRef.current.paused) {
